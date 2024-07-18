@@ -36,17 +36,17 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      working-directory: Day-One/cluster/
+      working-directory: base/eks/
       run: terraform init -backend-config "bucket=terraformaws11" -backend-config "key=eks-prod.tfstate"
            
     - name: Terraform Format
-      working-directory: Day-One/cluster/
+      working-directory: base/eks/
       run: terraform fmt
 
     - name: Terraform Plan
-      working-directory: Day-One/cluster/
+      working-directory: base/eks/
       run: terraform plan -var="k8sVersion=1.27"
     
     - name: Terraform Apply
-      working-directory: Day-One/cluster/
+      working-directory: base/eks/
       run: terraform apply -var="k8sVersion=1.27" -auto-approve
