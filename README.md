@@ -157,8 +157,6 @@ kubectl get pods -n cert-manager
 
 ```
 
-Deberíamos ver algo as
-
 ```
 NAME                                            READY   STATUS    RESTARTS   AGE
 cert-manager-6c9b44dd95-59b6n                   1/1     Running   0          47m
@@ -271,7 +269,7 @@ kubectl apply -f staging-ingress.yaml
 ## Verify Certificate Creation Process
 
 
-Ahora si en nuestro namespace donde desplegamos el ingress resource y los pods/servicios hacemos un `kubectl get challenge` vamos a ver algo asi
+Now, if in our namespace where we deployed the ingress resource and the pods/services we run a `kubectl get challenge`, we will see something like this:
 ```
 NAME                                                        STATE     DOMAIN                       AGE
 yoursubdomain-tls-secret-staging-6lmxj-668717679-4070204345   pending   yoursubdomain.duckdns.org      4s
@@ -285,7 +283,7 @@ If we check the status of our certificate while the challenge exists, we'll see 
 NAME                             READY   SECRET                           AGE
 yoursubdomain-tls-secret-staging   False    yoursubdomain-tls-secret-staging   7m15s
 ```
-Y una vez terminado el proceso y cuando `challenge` desaparece, lo vemos asi:
+And once the process is finished and the challenge disappears, we see it like this:
 
 ```
 NAME                             READY   SECRET                           AGE
