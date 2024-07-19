@@ -8,12 +8,11 @@ Let's get started:
 
 ## Prerequisites and Versions
 
-- AKS cluster version: 1.21.7
+- AKS cluster or EKS
 - Helm 3
-- Ingress-controller nginx chart version 4.0.16
-- Ingress-controller nginx app version 1.1.1
-- cert-manager version 1.2.0
-- cert-manager DuckDNS webhook version 1.2.2
+- Ingress-controller NGINX (via Helm)
+- Cert-manager (via Helm)
+- cert-manager DuckDNS webhook (via Helm)
 
 ## 1. Add Helm Repo for Ingress NGINX
 
