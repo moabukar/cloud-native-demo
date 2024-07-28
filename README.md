@@ -2,8 +2,6 @@
 
 This guide is a way to set up an Ingress controller and cert-manager (using DuckDNS) to quickly and freely obtain an HTTPS URL pointing to our AKS cluster to expose our applications to the internet.
 
-You can also find this guide in video form on my YouTube channel (javi__codes). More links to my other social networks at the end of the guide.
-
 Let's get started:
 
 ## Prerequisites and Versions
