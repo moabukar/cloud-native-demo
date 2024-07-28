@@ -46,11 +46,11 @@ resource "aws_iam_role_policy_attachment" "AmazonEC2ContainerRegistryReadOnly-EK
 
 ## Create the EKS cluster
 resource "aws_eks_cluster" "eks" {
-  name = var.EKSClusterName
+  name     = var.EKSClusterName
   role_arn = aws_iam_role.eks-iam-role.arn
 
   enabled_cluster_log_types = ["api", "audit", "scheduler", "controllerManager"]
-  version = var.k8sVersion
+  version                   = var.k8sVersion
   vpc_config {
     # You can set these as just private subnets if the Control Plane will be private
     subnet_ids = [var.pubsub1, var.pubsub2]
@@ -112,7 +112,7 @@ resource "aws_eks_node_group" "worker-node-group" {
   node_group_name = "workernodes-${var.environment}"
   node_role_arn   = aws_iam_role.workernodes.arn
   subnet_ids      = [var.pubsub1, var.pubsub2]
-  instance_types = var.instanceType
+  instance_types  = var.instanceType
 
   scaling_config {
     desired_size = var.desired_size
